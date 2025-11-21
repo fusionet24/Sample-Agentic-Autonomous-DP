@@ -155,12 +155,12 @@ Please refer to the following documentation for guidance:
 
 ## 🎓 Example Code Structure
 
+**Note**: In Databricks DLT pipelines, `spark` is available as a global variable and doesn't need to be imported or instantiated.
+
 ### Bronze Layer Example
 ```python
 import dlt
 from pyspark.sql.functions import current_timestamp, input_file_name
-
-# Note: 'spark' is available as a global variable in Databricks DLT pipelines
 
 @dlt.table(
     name="bronze_trips",
@@ -184,8 +184,6 @@ def bronze_trips():
 ```python
 import dlt
 from pyspark.sql.functions import col, when, unix_timestamp
-
-# Note: 'spark' is available as a global variable in Databricks DLT pipelines
 
 @dlt.table(
     name="silver_trips_cleaned",
