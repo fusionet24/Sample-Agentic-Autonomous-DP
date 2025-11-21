@@ -160,6 +160,8 @@ Please refer to the following documentation for guidance:
 import dlt
 from pyspark.sql.functions import current_timestamp, input_file_name
 
+# Note: 'spark' is available as a global variable in Databricks DLT pipelines
+
 @dlt.table(
     name="bronze_trips",
     comment="Raw NYC Taxis trip data - Bronze layer",
@@ -182,6 +184,8 @@ def bronze_trips():
 ```python
 import dlt
 from pyspark.sql.functions import col, when, unix_timestamp
+
+# Note: 'spark' is available as a global variable in Databricks DLT pipelines
 
 @dlt.table(
     name="silver_trips_cleaned",
